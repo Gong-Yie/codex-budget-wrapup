@@ -1,0 +1,44 @@
+{
+  "description": "接近 Codex 用量限额时强制收尾：Stop 事件续一轮，要求写交接总结。",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/hooks/budget_wrapup.py\"",
+            "commandWindows": "if (Get-Command py -ErrorAction SilentlyContinue) { py -3 \"$env:PLUGIN_ROOT\\hooks\\budget_wrapup.py\" } else { python \"$env:PLUGIN_ROOT\\hooks\\budget_wrapup.py\" }",
+            "timeout": 15,
+            "statusMessage": "读取 Codex 额度"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/hooks/budget_wrapup.py\"",
+            "commandWindows": "if (Get-Command py -ErrorAction SilentlyContinue) { py -3 \"$env:PLUGIN_ROOT\\hooks\\budget_wrapup.py\" } else { python \"$env:PLUGIN_ROOT\\hooks\\budget_wrapup.py\" }",
+            "timeout": 15,
+            "statusMessage": "检查 Codex 额度"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/hooks/budget_wrapup.py\"",
+            "commandWindows": "if (Get-Command py -ErrorAction SilentlyContinue) { py -3 \"$env:PLUGIN_ROOT\\hooks\\budget_wrapup.py\" } else { python \"$env:PLUGIN_ROOT\\hooks\\budget_wrapup.py\" }",
+            "timeout": 20,
+            "statusMessage": "检查 Codex 额度"
+          }
+        ]
+      }
+    ]
+  }
+}

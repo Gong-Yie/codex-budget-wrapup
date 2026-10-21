@@ -1,0 +1,16 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "budget-wrapup",
+  "version": "1.0.0",
+  "description": "接近 Codex 用量限额时强制收尾：拦截 turn 结束，要求写一份能交接的总结。 Force a hand-off summary before the Codex usage limit runs out.",
+  "author": {
+    "name": "工一阵"
+  },
+  "license": "MIT",
+  "keywords": ["codex", "hooks", "rate-limit", "handoff", "summary"],
+  "extensions": {
+    "com.openai": {
+      "hooks": ["./hooks/hooks.json"]
+    }
+  }
+}

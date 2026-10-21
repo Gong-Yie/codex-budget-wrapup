@@ -1,0 +1,21 @@
+{
+  "name": "codex-budget-wrapup",
+  "plugins": [
+    {
+      "name": "budget-wrapup",
+      "source": {
+        "source": "local",
+        "path": "./plugins/budget-wrapup"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "interface": {
+        "displayName": "额度收尾 budget-wrapup",
+        "shortDescription": "额度快满时强制 Codex 写收尾总结"
+      }
+    }
+  ]
+}
