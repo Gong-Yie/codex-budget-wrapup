@@ -10,8 +10,12 @@
 ## 安装
 
 ```bash
+git clone git@github.com:Gong-Yie/codex-budget-wrapup.git
+cd codex-budget-wrapup
 python install.py
 ```
+
+Windows 上 `python install.py` 或 `py -3 install.py` 都行，脚本零依赖。
 
 会做三件事：
 

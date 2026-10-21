@@ -10,8 +10,12 @@ When your Codex quota is nearly gone, don't let the agent stop mid-thought. This
 ## Install
 
 ```bash
+git clone git@github.com:Gong-Yie/codex-budget-wrapup.git
+cd codex-budget-wrapup
 python install.py
 ```
+
+`python install.py` or `py -3 install.py` on Windows. No dependencies.
 
 That copies the hook script to `~/.codex/budget-wrapup/budget_wrapup.py`, writes three hooks into `~/.codex/hooks.json` (existing file is backed up, foreign hooks preserved), and drops a `config.json` next to the script.
 
